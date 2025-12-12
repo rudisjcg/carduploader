@@ -79,9 +79,6 @@ export default function CardList() {
             border="1px solid white"
             padding="10px"
             marginBottom="10px"
-            _hover={{
-              backgroundColor: "gray.100",
-            }}
             className="transition-all duration-300 ease-in-out w-full flex flex-col md:flex-row gap-4 justify-between items-center "
           >
             <div className="flex flex-col">
