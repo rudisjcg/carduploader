@@ -30,11 +30,11 @@ interface CardContextType {
 
 const CardContext = React.createContext<CardContextType>({
     cardNumber: "",
-    setCardNumber: (value: string) => {},
+    setCardNumber: () => {},
     cardName: "",
     setCardName: () => {},
     cvv: "",
-    setCvv: (value: string) => {},
+    setCvv: () => {},
     monthly: "",
     setMonthly: () => {},
     year: "",
@@ -148,53 +148,21 @@ function CardContextProvider({
     <CardContext.Provider value={contextValue}>
       <Flex
         fontFamily={`'Source Code Pro', monospace`}
-        width="100vw"
         height="100vh"
-        className="flex flex-col lg:flex-row"
+        className="flex flex-col lg:flex-row px-4 items-center justify-center overflow-x-hidden bg-gradient-to-r from-gray-900 to-gray-700 overflow-y-auto"
       >
         
         <Flex
-          position="absolute"
           color="white"
           boxShadow="0 1px 10px 1px rgb(0 0 0 / 30%)"
           backgroundImage="linear-gradient(to right, #202020, #808080)"
-          width="550px"
-          height="400px"
+         
+          height="500px"
           top="25%"
           left="50%"
-          transform="translateX(-50%)"
           borderRadius="10px"
+          className="flex min-w-[300px] w-full px-4 max-w-[550px]"
         >
-          <Flex
-            position="absolute"
-            top="0"
-            left="0"
-            width="100%"
-            height="100%"
-            overflow="hidden"
-            borderRadius="10px"
-          >
-            <Flex
-              position="absolute"
-              backgroundImage="linear-gradient(to bottom, #ff6767, #ff4545)"
-              height="100%"
-              width="calc(50% + 90px)"
-              transform="skewX(-20deg) translateX(102px)"
-              right="0"
-              boxShadow="0 0 10px 0px rgb(0 0 0 / 50%)"
-            />
-
-            <Flex
-              position="absolute"
-              backgroundImage="linear-gradient(to bottom, #ff6767, #ff4545)"
-              height="100%"
-              width="calc(50% + 90px)"
-              transform="skewX(20deg) translateX(218px)"
-              right="0"
-              boxShadow="0 0 10px 0px rgb(0 0 0 / 50%)"
-            />
-          </Flex>
-
           {children}
         </Flex>
       </Flex>

@@ -6,7 +6,7 @@ import { CardContextProvider } from "./context/CardContext";
 function App() {
   return (
     <CardContextProvider cardListComponent={<CardList />}>
-      <div className="flex flex-col lg:fle-row overflow-x-hidden">
+      <div className="flex flex-col lg:fle-row">
         <Form />
         <Card />
       </div>

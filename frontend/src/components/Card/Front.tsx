@@ -114,7 +114,7 @@ export default function Front() {
     <Flex p="25px" position="relative" direction="column" gridGap="10px">
       <Flex>
         <Text width="70%" fontSize="14px">
-          INVESTOR
+          TESTING COMPANY
         </Text>
       </Flex>
       <Flex gridGap="20px" alignItems="center">
@@ -308,15 +308,6 @@ export default function Front() {
           opacity="0.9"
           filter="brightness(1.5)"
         />
-      </Flex>
-
-      <Flex position="absolute" right="20px">
-        <svg className="logo" width="40" height="40" viewBox="0 0 17.5 16.2">
-          <path
-            d="M3.2 0l5.4 5.6L14.3 0l3.2 3v9L13 16.2V7.8l-4.4 4.1L4.5 8v8.2L0 12V3l3.2-3z"
-            fill="white"
-          ></path>
-        </svg>
       </Flex>
     </Flex>
   );

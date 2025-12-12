@@ -1,7 +1,7 @@
 import { Button, Flex } from "@chakra-ui/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { CardContext } from "../../context/CardContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { toast } from "react-hot-toast/headless";
 
 function getData() {
@@ -70,21 +70,19 @@ export default function CardList() {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error</p>;
 
-  console.log(data);
-
   return (
-    <ul className="flex flex-col gap-4 items-center justify-center px-4">
+    <ul className="flex flex-col gap-4 items-center justify-center px-4 bg-gradient-to-r from-gray-900 to-gray-700 overflow-y-auto text-white">
       {data.success && data.data.length > 0 ? (
         data.data.map((card: any) => (
           <Flex
             key={card._id}
-            border="1px solid black"
+            border="1px solid white"
             padding="10px"
             marginBottom="10px"
             _hover={{
               backgroundColor: "gray.100",
             }}
-            className="transition-all duration-300 ease-in-out w-full flex gap-4 justify-between items-center"
+            className="transition-all duration-300 ease-in-out w-full flex flex-col md:flex-row gap-4 justify-between items-center "
           >
             <div className="flex flex-col">
               <p>Card Number: **** **** **** {card.last4.slice(-4)}</p>

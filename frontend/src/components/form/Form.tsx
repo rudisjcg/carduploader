@@ -128,11 +128,9 @@ export default function Form() {
     formData.append("cvv", cvv);
 
     if (editCard && cardId) {
-      const response = await editCardMutation.mutateAsync({ formData, id: cardId });
-      console.log(response);
+      await editCardMutation.mutateAsync({ formData, id: cardId });
     } else {
-      const response = await createCardMutation.mutateAsync(formData);
-      console.log(response);
+      await createCardMutation.mutateAsync(formData);
     }
 
     setCardNumber("");
@@ -206,7 +204,7 @@ export default function Form() {
           />
         </FormControl>
 
-        <Flex justifyContent="space-between" gridGap="30px" w="100%">
+        <Flex justifyContent="space-between" gridGap="30px" w="100%" className="flex flex-col md:flex-row">
           <FormControl>
             <FormLabel className="form-label">Expiration Date</FormLabel>
             <Flex fontSize="16px" gridGap="10px">

@@ -15,19 +15,16 @@ export default function Card() {
   const { onCvvFocus } = useContext(CardContext);
   return (
     <Flex
-      width="400px"
       height="250px"
-      left="50%"
       position="absolute"
-      transform="translateX(-50%)"
-      top="-50%"
+      top="2%"
       borderRadius="15px"
       onMouseOver={() => setIsHover(() => true)}
       onMouseLeave={() => setIsHover(() => false)}
+      className="card_breakpoints"
     >
       <ChakraBox
         className="front"
-        position="absolute"
         top="0"
         left="0"
         width="100%"
